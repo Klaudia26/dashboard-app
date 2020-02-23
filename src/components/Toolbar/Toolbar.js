@@ -1,17 +1,47 @@
 import React, { Component } from 'react';
 import Upload from '../Upload/Upload';
 import Modal from '../Modal/Modal';
+import styles from './Toolbar.module.scss';
 
 class Toolbar extends Component {
   state = {
     isModalOpen: false,
+    mediaPreview: '',
+    file: null,
   };
   renderAction = () => (
     <>
-      <button>upload file</button>
       <button onClick={this.closeModal}>cancel</button>
+      <button onClick={this.uploadImage}>upload</button>
     </>
   );
+
+  uploadImage = () => {
+    this.props.uploadImage(this.state.file);
+    this.closeModal();
+  };
+
+  renderModalContent = () => (
+    <>
+      <input type="file" onChange={this.handleFileChange} />
+      <img
+        className={styles.imagePreview}
+        src={this.state.mediaPreview}
+        alt="url"
+      />
+    </>
+  );
+
+  handleFileChange = (e) => {
+    const file = e.target.files[0];
+    const imageUrl = window.URL.createObjectURL(file);
+
+    this.setState({
+      mediaPreview: imageUrl,
+      file: file,
+    });
+  };
+
   openModal = () => {
     this.setState({
       isModalOpen: true,
@@ -23,6 +53,7 @@ class Toolbar extends Component {
       isModalOpen: false,
     });
   };
+
   render() {
     return (
       <div>
@@ -30,8 +61,9 @@ class Toolbar extends Component {
         {this.state.isModalOpen && (
           <Modal
             header="Upload file"
-            content="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
+            content={this.renderModalContent()}
             action={this.renderAction()}
+            closeModal={this.closeModal}
           />
         )}
       </div>

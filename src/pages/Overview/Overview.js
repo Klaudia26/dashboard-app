@@ -21,11 +21,37 @@ class Overview extends Component {
     }
   }
 
+  uploadImage = async (image) => {
+    console.log(image);
+    const payload = new FormData();
+
+    payload.append('file', image);
+    payload.append('upload_preset', 'shop-app');
+    payload.append('cloud_name', 'kubaleski');
+
+    const response = await axios.post(
+      process.env.REACT_APP_CLOUDINARY_URL,
+      payload
+    );
+    const newItem = {
+      name: '',
+      createdAt: new Date(),
+      url: response.data.url,
+    };
+    const url = 'http://localhost:3001/pictures';
+    const res = await axios.post(url, newItem);
+
+    console.log('OPD', res.data);
+    this.setState({
+      pictures: this.state.pictures.concat(res.data),
+    });
+  };
+
   render() {
     return (
       <div className={styles.overview}>
         <Header header="Overview" />
-        <Toolbar />
+        <Toolbar uploadImage={this.uploadImage} />
         <CardList pictures={this.state.pictures} />
       </div>
     );
