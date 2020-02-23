@@ -1,19 +1,28 @@
 {
-  "posts": [
+  "pictures": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "name": "photo",
+      "createdAt": "12.04.2019",
+      "url": "https://res.cloudinary.com/kubaleski/image/upload/v1582461889/cameron-venti-_yBEzQQoC3Y-unsplash_wrvllh.jpg"
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": 2,
+      "name": "photo",
+      "createdAt": "12.04.2019",
+      "url": "https://res.cloudinary.com/kubaleski/image/upload/v1582461884/ralph-kayden-4Cg5T03B_8s-unsplash_z5dwpi.jpg"
+    },
+    {
+      "id": 3,
+      "name": "photo",
+      "createdAt": "12.04.2019",
+      "url": "https://res.cloudinary.com/kubaleski/image/upload/v1582461851/jackson-eaves-8j4Xlk2j9E8-unsplash_pro2yk.jpg"
+    },
+    {
+      "id": 4,
+      "name": "photo",
+      "createdAt": "12.04.2019",
+      "url": "https://res.cloudinary.com/kubaleski/image/upload/v1582461850/mitchell-luo-RzbqySOWWh0-unsplash_i7pmor.jpg"
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
