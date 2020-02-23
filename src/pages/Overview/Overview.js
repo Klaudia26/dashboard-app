@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import CardList from '../../components/CardList/CardList';
+import Header from '../../components/Header/Header';
 import styles from './Overview.module.scss';
+import Toolbar from '../../components/Toolbar/Toolbar';
 
 class Overview extends Component {
   state = {
@@ -17,12 +19,13 @@ class Overview extends Component {
         pictures: response.data,
       });
     }
-    // console.log('odp', response);
   }
 
   render() {
     return (
       <div className={styles.overview}>
+        <Header header="Overview" />
+        <Toolbar />
         <CardList pictures={this.state.pictures} />
       </div>
     );
