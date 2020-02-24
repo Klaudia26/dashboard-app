@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap&subset=latin-ext');
 *,
 *::before,
 *::after {
@@ -8,4 +9,10 @@
 
 html {
   font-size: 62.5%;
+  font-family: 'Lato';
+}
+
+h1 {
+  font-weight: 300;
+  font-size: 3rem;
 }

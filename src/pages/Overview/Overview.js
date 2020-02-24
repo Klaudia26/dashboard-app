@@ -8,6 +8,7 @@ import Toolbar from '../../components/Toolbar/Toolbar';
 class Overview extends Component {
   state = {
     pictures: [],
+    selectedCard: '',
   };
 
   async componentDidMount() {
@@ -47,12 +48,42 @@ class Overview extends Component {
     });
   };
 
+  handleRemoveFile = async () => {
+    if (!this.state.selectedCard) {
+      return;
+    }
+    const url = `http://localhost:3001/pictures/${this.state.selectedCard}`;
+    const res = await axios.delete(url);
+
+    if (res.status === 200 || res.status === 201) {
+      this.setState({
+        pictures: this.state.pictures.filter(
+          (picture) => picture.id !== this.state.selectedCard
+        ),
+      });
+    }
+  };
+
+  selectCard = (cardId) => {
+    this.setState({
+      selectedCard: cardId,
+    });
+  };
+
   render() {
     return (
       <div className={styles.overview}>
         <Header header="Overview" />
-        <Toolbar uploadImage={this.uploadImage} />
-        <CardList pictures={this.state.pictures} />
+        <Toolbar
+          uploadImage={this.uploadImage}
+          handleRemoveFile={this.handleRemoveFile}
+          isSelected={!!this.state.selectedCard}
+        />
+        <CardList
+          pictures={this.state.pictures}
+          selectCard={this.selectCard}
+          isSelected={this.state.selectedCard}
+        />
       </div>
     );
   }

@@ -6,9 +6,10 @@ class Navigation extends Component {
   render() {
     return (
       <div className={styles.nav}>
-        <Link to="/activity">activity</Link>
-        <Link to="/users">users</Link>
-        <Link to="/">overview</Link>
+        <h5>Main</h5>
+        <Link to="/activity">Activity</Link>
+        <Link to="/users">Users</Link>
+        <Link to="/">Overview</Link>
       </div>
     );
   }
