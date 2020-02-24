@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Upload from '../Upload/Upload';
 import Modal from '../Modal/Modal';
+import { FaTrash } from 'react-icons/fa';
 import styles from './Toolbar.module.scss';
 
 class Toolbar extends Component {
@@ -11,8 +12,8 @@ class Toolbar extends Component {
   };
   renderAction = () => (
     <>
-      <button onClick={this.closeModal}>cancel</button>
-      <button onClick={this.uploadImage}>upload</button>
+      <button onClick={this.closeModal}>Cancel</button>
+      <button onClick={this.uploadImage}>Upload</button>
     </>
   );
 
@@ -56,7 +57,15 @@ class Toolbar extends Component {
 
   render() {
     return (
-      <div>
+      <div className={styles.toolbar}>
+        <button
+          className={styles.icon}
+          onClick={this.props.handleRemoveFile}
+          disabled={!this.props.isSelected}
+        >
+          <FaTrash />
+        </button>
+
         <Upload openModal={this.openModal} />
         {this.state.isModalOpen && (
           <Modal

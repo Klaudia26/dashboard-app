@@ -1,3 +1,36 @@
+.toolbar {
+  padding: 2.5rem 0 1.5rem 0;
+  border-bottom: 1.1px solid lightgrey;
+  display: flex;
+  justify-content: space-between;
+}
+.icon {
+  border: 1px solid grey;
+  border-radius: 50%;
+  display: flex;
+
+  svg {
+    fill: grey;
+    padding: 8px;
+    font-size: 3rem;
+  }
+  svg:hover {
+    fill: #40d59d;
+  }
+}
+.icon {
+  &:not(:disabled):hover {
+    border: 1px solid#40d59d;
+    cursor: pointer;
+  }
+  &:disabled {
+    border: 1px solid lightgrey;
+    svg {
+      fill: lightgrey;
+    }
+  }
+}
+
 .imagePreview {
   width: 4rem;
 }

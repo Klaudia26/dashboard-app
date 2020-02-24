@@ -13,4 +13,26 @@
   background-color: grey;
   width: 60rem;
   padding: 3rem;
+  border-radius: 3px;
+}
+.action {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2rem;
+  button {
+    opacity: 0.9;
+    color: grey;
+    font-weight: 500;
+    padding: 0.5rem 1.4rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    outline: none;
+  }
+  button:hover {
+    background-color: #40d59d;
+    border: none;
+    color: white;
+    border-radius: 2px;
+  }
 }
