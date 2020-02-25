@@ -1,9 +1,10 @@
 import React from 'react';
 import UserCard from '../UserCard/UserCard';
+import styles from './UserList.module.scss';
 
 const UsersList = (props) => {
   return (
-    <div>
+    <div className={styles.userList}>
       {props.users.map((user) => {
         return (
           <UserCard

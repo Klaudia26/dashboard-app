@@ -1,0 +1,12 @@
+.userCard {
+  font-size: 1.7rem;
+  padding: 1.3rem;
+  border: 1px solid #40d59d;
+  cursor: pointer;
+  &__list {
+  }
+
+  &__item {
+    list-style: none;
+  }
+}

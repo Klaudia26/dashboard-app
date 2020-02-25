@@ -45,6 +45,7 @@ class Users extends Component {
         <Toolbar
           handleRemoveFile={this.removeUser}
           isSelected={!!this.state.selectUser}
+          showButton
         />
         <UsersList
           users={this.state.users}

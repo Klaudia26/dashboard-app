@@ -1,0 +1,6 @@
+.userList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-gap: 5rem;
+  padding-top: 4rem;
+}
