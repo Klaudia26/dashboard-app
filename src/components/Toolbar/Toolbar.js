@@ -56,6 +56,7 @@ class Toolbar extends Component {
   };
 
   render() {
+    console.log('jjj', this.props.handleRemoveFile);
     return (
       <div className={styles.toolbar}>
         <button
