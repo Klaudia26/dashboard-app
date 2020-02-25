@@ -1,8 +1,8 @@
 import React from 'react';
 
-const UserCard = ({ user }) => {
+const UserCard = ({ user, activeUser }) => {
   return (
-    <div>
+    <div onClick={() => activeUser(user.id)}>
       <ul>
         <li>
           <p>{user.name}</p>

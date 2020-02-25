@@ -27,19 +27,19 @@
   ],
   "users": [
     {
-      "id": 1,
-      "name": "Berag Brights",
-      "gender": "male",
-      "age": 32
-    },
-    {
       "id": 2,
-      "name": "Emma Smith",
+      "name": "Caroline Cordon",
       "gender": "female",
-      "age": 28
+      "age": 46
     },
     {
       "id": 3,
+      "name": "Caroline Cordon",
+      "gender": "female",
+      "age": 46
+    },
+    {
+      "id": 4,
       "name": "Caroline Cordon",
       "gender": "female",
       "age": 46
