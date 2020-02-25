@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Upload from '../Upload/Upload';
 import Modal from '../Modal/Modal';
 import { FaTrash } from 'react-icons/fa';
+import { MdAdd } from 'react-icons/md';
+
 import styles from './Toolbar.module.scss';
 
 class Toolbar extends Component {
@@ -56,7 +58,6 @@ class Toolbar extends Component {
   };
 
   render() {
-    console.log('jjj', this.props.handleRemoveFile);
     return (
       <div className={styles.toolbar}>
         <button
@@ -66,8 +67,14 @@ class Toolbar extends Component {
         >
           <FaTrash />
         </button>
+        {this.props.showButton ? (
+          <button className={styles.icon}>
+            <MdAdd />
+          </button>
+        ) : (
+          <Upload openModal={this.openModal} />
+        )}
 
-        <Upload openModal={this.openModal} />
         {this.state.isModalOpen && (
           <Modal
             header="Upload file"
