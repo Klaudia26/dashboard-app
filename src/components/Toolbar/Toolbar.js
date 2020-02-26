@@ -3,6 +3,7 @@ import Upload from '../Upload/Upload';
 import Modal from '../Modal/Modal';
 import { FaTrash } from 'react-icons/fa';
 import { MdAdd } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 import styles from './Toolbar.module.scss';
 
@@ -68,9 +69,11 @@ class Toolbar extends Component {
           <FaTrash />
         </button>
         {this.props.showButton ? (
-          <button className={styles.icon}>
-            <MdAdd />
-          </button>
+          <Link to="/users/create">
+            <button className={styles.icon}>
+              <MdAdd />
+            </button>
+          </Link>
         ) : (
           <Upload openModal={this.openModal} />
         )}
