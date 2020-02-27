@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import Header from '../../components/Header/Header';
 import styles from './CreateUser.module.scss';
+import axios from 'axios';
 
 class CreateUser extends Component {
   state = {
-    users: [],
     name: '',
     surname: '',
     email: '',
@@ -14,6 +14,7 @@ class CreateUser extends Component {
     aboute: '',
     dateOfBirth: '',
     gender: 'female',
+    loading: false,
   };
   handleChange = (e) => {
     this.setState({
@@ -23,6 +24,30 @@ class CreateUser extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+    this.setState({
+      loading: true,
+    });
+
+    const user = {
+      name: this.state.name,
+      surname: this.state.surname,
+      email: this.state.email,
+      phone: this.state.phone,
+      address: this.state.address,
+      website: this.state.website,
+      aboute: this.state.aboute,
+      dateOfBirth: this.state.dateOfBirth,
+      gender: this.state.gender,
+    };
+    const url = 'http://localhost:3001/users';
+
+    setTimeout(async () => {
+      const res = await axios.post(url, user);
+      this.props.history.push('/users');
+      this.setState({
+        loading: false,
+      });
+    }, 1000);
   };
   render() {
     return (
@@ -186,7 +211,11 @@ class CreateUser extends Component {
             className={styles.textarea}
             placeholder="Tell us something about yourself"
           ></textarea>
-          <button type="submit" className={styles.btn}>
+          <button
+            type="submit"
+            className={styles.btn}
+            disabled={this.state.loading}
+          >
             Submit
           </button>
         </form>

@@ -6,18 +6,15 @@ const UserCard = ({ user, activeUser }) => {
     <div onClick={() => activeUser(user.id)} className={styles.userCard}>
       <ul className={styles.userCard__list}>
         <li className={styles.userCard__item}>
-          <p>
-            <span>Name: </span>
-            {user.name}
-          </p>
-          <p>
-            <span>Gender: </span>
-            {user.gender}
-          </p>
-          <p>
-            <span>Age: </span>
-            {user.age}
-          </p>
+          <p>{user.name}</p>
+          <p>{user.surname}</p>
+          <p>{user.email}</p>
+          <p>{user.phone}</p>
+          <p>{user.address}</p>
+          <p>{user.website}</p>
+          <p>{user.about}</p>
+          <p>{user.dateOfBirth}</p>
+          <p>{user.gender}</p>
         </li>
       </ul>
     </div>
