@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from '../../components/Header/Header';
 import styles from './CreateUser.module.scss';
 import axios from 'axios';
+import FormField from '../../components/FormField/FormField';
 
 class CreateUser extends Component {
   state = {
@@ -50,159 +51,94 @@ class CreateUser extends Component {
     }, 1000);
   };
   render() {
+    const fields = [
+      { type: 'text', value: this.state.name, name: 'name', label: 'Name' },
+      {
+        type: 'text',
+        value: this.state.surname,
+        name: 'surname',
+        label: 'Surname',
+      },
+      { type: 'email', value: this.state.email, name: 'email', label: 'Email' },
+      { type: 'tel', value: this.state.phone, name: 'phone', label: 'Phone' },
+      {
+        type: 'text',
+        value: this.state.address,
+        name: 'address',
+        label: 'Address',
+      },
+      {
+        type: 'date',
+        value: this.state.dateOfBirth,
+        name: 'dateOfBirth',
+        label: 'Date Of Birth',
+      },
+      {
+        type: 'url',
+        value: this.state.website,
+        name: 'website',
+        label: 'Website',
+      },
+      {
+        type: 'file',
+        value: this.state.media,
+        name: 'media',
+        label: 'Choose file',
+      },
+      {
+        type: 'radio',
+        value: this.state.gender,
+        name_1: 'male',
+        label_1: 'Male',
+        name_2: 'female',
+        label_2: 'Female',
+      },
+    ];
     return (
       <>
         <Header header="Complete the fields" />
         <form onSubmit={this.handleSubmit} className={styles.createUserForm}>
+          {fields.map((field) => {
+            if (field.type === 'radio') {
+              return (
+                <div className={styles.formItem}>
+                  <label htmlFor="male" className={styles.radioLabel}>
+                    Male
+                    <input
+                      type="radio"
+                      onChange={this.handleChange}
+                      name="gender"
+                      checked={this.state.gender === 'male'}
+                      value="male"
+                      id="male"
+                      className={styles.input}
+                    />
+                  </label>
+                  <label htmlFor="female" className={styles.radioLabel}>
+                    Female
+                    <input
+                      type="radio"
+                      onChange={this.handleChange}
+                      name="gender"
+                      checked={this.state.gender === 'female'}
+                      value="female"
+                      id="female"
+                      className={styles.input}
+                    />
+                  </label>
+                </div>
+              );
+            }
+            return <FormField field={field} handleChange={this.handleChange} />;
+          })}
           <div className={styles.formItem}>
-            <input
-              type="text"
-              onChange={this.handleChange}
-              value={this.state.name}
-              name="name"
-              placeholder=" "
-              id="name"
-              className={styles.input}
-            />
-            <label htmlFor="name" className={styles.label}>
-              Name{' '}
+            <label htmlFor="select" className={styles.label}>
+              Select{' '}
             </label>
-          </div>
-          <div className={styles.formItem}>
-            <input
-              type="text"
-              onChange={this.handleChange}
-              value={this.state.surname}
-              placeholder=" "
-              name="surname"
-              id="surname"
-              className={styles.input}
-            />
-            <label htmlFor="surname" className={styles.label}>
-              Surname{' '}
-            </label>
-          </div>
-          <div className={styles.formItem}>
-            <input
-              type="email"
-              onChange={this.handleChange}
-              value={this.state.email}
-              name="email"
-              id="email"
-              placeholder=" "
-              className={styles.input}
-            />
-            <label htmlFor="email" className={styles.label}>
-              Email{' '}
-            </label>
-          </div>
-          <div className={styles.formItem}>
-            <input
-              type="tel"
-              onChange={this.handleChange}
-              value={this.state.phone}
-              name="phone"
-              placeholder=" "
-              id="phone"
-              className={styles.input}
-            />
-            <label htmlFor="phone" className={styles.label}>
-              Phone{' '}
-            </label>
-          </div>
-          <div className={styles.formItem}>
-            <input
-              type="text"
-              onChange={this.handleChange}
-              value={this.state.address}
-              name="address"
-              placeholder=" "
-              id="address"
-              className={styles.input}
-            />
-            <label htmlFor="address" className={styles.label}>
-              Address{' '}
-            </label>
-          </div>
-          <div className={styles.formItem}>
-            <input
-              required
-              type="date"
-              onChange={this.handleChange}
-              value={this.state.dateOfBirth}
-              name="dateOfBirth"
-              id="dateOfBirth"
-              placeholder=" "
-              className={styles.input}
-            />
-            <label htmlFor="dateOfBirth" className={styles.label}>
-              Date Of Birth
-            </label>
-          </div>
-          <div className={styles.formItem}>
-            <input
-              type="url"
-              onChange={this.handleChange}
-              value={this.state.website}
-              name="website"
-              placeholder=" "
-              id="url"
-              className={styles.input}
-            />
-            <label htmlFor="url" className={styles.label}>
-              Url{' '}
-            </label>
-          </div>
-          <div>
-            <label htmlFor="media" className={styles.labelMedia}>
-              Choose file
-            </label>
-            <input
-              type="file"
-              onChange={this.handleChange}
-              name="media"
-              className={styles.input}
-              id="media"
-            />
-          </div>
-          <div className={styles.formItem}>
             <select id="select" className={styles.select}>
               <option value="single">Single</option>
               <option value="maried">Maried</option>
             </select>
-            <label htmlFor="select" className={styles.label}>
-              Select{' '}
-            </label>
-          </div>
-          <div className={styles.formItem}>
-            <div>
-              <label htmlFor="male" className={styles.label}>
-                Male{' '}
-              </label>
-              <input
-                type="radio"
-                onChange={this.handleChange}
-                name="gender"
-                checked={this.state.gender === 'male'}
-                value="male"
-                id="male"
-                className={styles.input}
-              />
-            </div>
-            <div className={styles.female}>
-              <label htmlFor="female" className={styles.label}>
-                Female{' '}
-              </label>
-              <input
-                type="radio"
-                onChange={this.handleChange}
-                name="gender"
-                checked={this.state.gender === 'female'}
-                value="female"
-                id="female"
-                className={styles.input}
-              />
-            </div>
           </div>
           <textarea
             onChange={this.handleChange}

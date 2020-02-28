@@ -4,28 +4,9 @@
   grid-gap: 5rem;
   grid-column-gap: 10rem;
   padding: 3rem;
+  font-size: 1.4rem;
+  color: #7d7d7d;
 
-  .formItem {
-    position: relative;
-    width: 100%;
-    margin: 0 auto;
-    border-bottom: 1px solid lightgrey;
-    flex-shrink: 0;
-    font-size: 1.4rem;
-  }
-
-  .input {
-    width: 100%;
-    line-height: 22px;
-    font-size: 16px;
-    border: none;
-    background: none;
-    color: #7d7d7d;
-  }
-  .input:focus,
-  .textarea:focus {
-    outline: none;
-  }
   .textarea {
     width: 100%;
     margin: 0 auto;
@@ -33,15 +14,28 @@
     padding: 1rem;
     grid-column-start: 1;
     grid-column-end: 3;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus + label {
+      top: -2.2rem;
+      font-size: 1rem;
+    }
   }
 
-  .label {
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: #7d7d7d;
-    transition: all ease-out 0.2s;
+  .radioLabel {
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+
+    input {
+      display: block;
+      margin: 0 auto;
+    }
   }
+
   .btn {
     width: 12rem;
     height: 3.2rem;
@@ -63,38 +57,8 @@
       transform: translateY(-2px);
     }
   }
-  .input:focus + .label,
-  .textarea:focus + .label {
-    top: -2.2rem;
-    font-size: 1rem;
-  }
 
-  .input:not(:placeholder-shown) + .label {
-    top: -22px;
-    font-size: 1rem;
-  }
   .select {
     margin-left: 5rem;
-  }
-
-  input[type='file'] {
-    display: none;
-  }
-  .labelMedia {
-    background-color: #40d59d;
-    color: #fff;
-    padding: 1rem 1.5rem;
-    border-radius: 2px;
-    box-shadow: 0 1px 2px grey;
-  }
-  .female {
-    position: relative;
-  }
-
-  input[type='date']:required:invalid::-webkit-datetime-edit {
-    color: transparent;
-  }
-  input[type='date']:focus::-webkit-datetime-edit {
-    color: black !important;
   }
 }
