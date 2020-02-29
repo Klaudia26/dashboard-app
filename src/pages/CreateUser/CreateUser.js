@@ -3,6 +3,7 @@ import Header from '../../components/Header/Header';
 import styles from './CreateUser.module.scss';
 import axios from 'axios';
 import FormField from '../../components/FormField/FormField';
+import ModalFile from '../../components/Modal/ModalFile';
 
 class CreateUser extends Component {
   state = {
@@ -15,16 +16,34 @@ class CreateUser extends Component {
     aboute: '',
     dateOfBirth: '',
     gender: 'female',
+    imageUrl: '',
     loading: false,
+    isModalOpen: false,
   };
   handleChange = (e) => {
+    if (e.target.name === 'media') {
+      this.setState({
+        [e.target.name]: e.target.files[0],
+      });
+      return;
+    }
+
     this.setState({
       [e.target.name]: e.target.value,
     });
   };
 
+  isEmpty = () => {
+    const { name, surname } = this.state;
+
+    return !name.length || !surname.length;
+  };
+
   handleSubmit = (e) => {
     e.preventDefault();
+    if (this.isEmpty()) {
+      return;
+    }
     this.setState({
       loading: true,
     });
@@ -39,6 +58,7 @@ class CreateUser extends Component {
       aboute: this.state.aboute,
       dateOfBirth: this.state.dateOfBirth,
       gender: this.state.gender,
+      imageUrl: this.state.imageUrl,
     };
     const url = 'http://localhost:3001/users';
 
@@ -50,7 +70,20 @@ class CreateUser extends Component {
       });
     }, 1000);
   };
+  openModal = () => {
+    this.setState({ isModalOpen: true });
+  };
+
+  closeModal = () => {
+    this.setState({ isModalOpen: false });
+  };
+
+  uploadImage = (imageUrl) => {
+    this.setState({ imageUrl: imageUrl });
+  };
+
   render() {
+    console.log(this.state);
     const fields = [
       { type: 'text', value: this.state.name, name: 'name', label: 'Name' },
       {
@@ -78,12 +111,6 @@ class CreateUser extends Component {
         value: this.state.website,
         name: 'website',
         label: 'Website',
-      },
-      {
-        type: 'file',
-        value: this.state.media,
-        name: 'media',
-        label: 'Choose file',
       },
       {
         type: 'radio',
@@ -140,6 +167,9 @@ class CreateUser extends Component {
               <option value="maried">Maried</option>
             </select>
           </div>
+          <button onClick={this.openModal} className={styles.btnMedia}>
+            Choose file
+          </button>
           <textarea
             onChange={this.handleChange}
             value={this.state.aboute}
@@ -155,6 +185,12 @@ class CreateUser extends Component {
             Submit
           </button>
         </form>
+        {this.state.isModalOpen && (
+          <ModalFile
+            closeModal={this.closeModal}
+            uploadImage={this.uploadImage}
+          />
+        )}
       </>
     );
   }
