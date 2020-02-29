@@ -29,27 +29,15 @@
       "createdAt": "2020-02-27T11:27:33.652Z",
       "url": "http://res.cloudinary.com/kubaleski/image/upload/v1582802852/jwmokvwn1ne8vfyqvgg9.jpg",
       "id": 5
+    },
+    {
+      "name": "",
+      "createdAt": "2020-02-28T22:23:10.966Z",
+      "url": "http://res.cloudinary.com/kubaleski/image/upload/v1582928588/p4iiqviz08i0ivht2fua.png",
+      "id": 6
     }
   ],
   "users": [
-    {
-      "id": 2,
-      "name": "Caroline Cordon",
-      "gender": "female",
-      "age": 46
-    },
-    {
-      "id": 3,
-      "name": "Caroline Cordon",
-      "gender": "female",
-      "age": 46
-    },
-    {
-      "id": 4,
-      "name": "Caroline Cordon",
-      "gender": "female",
-      "age": 46
-    },
     {
       "name": "Emma",
       "surname": "Smith",
@@ -59,29 +47,6 @@
       "website": "www.strona.com",
       "aboute": "Lorem ipsum",
       "dateOfBirth": "12.02.1989",
-      "gender": "female"
-    },
-    {
-      "name": "Klaudia Krzywda",
-      "surname": "Krzywda",
-      "email": "klaudia.krzywda@gmail.com",
-      "phone": "07494546276",
-      "address": "Golders Green",
-      "website": "",
-      "aboute": "",
-      "dateOfBirth": "2020-02-08",
-      "gender": "female",
-      "id": 5
-    },
-    {
-      "name": "Klaudia Krzywda",
-      "surname": "Krzywda",
-      "email": "klaudia.krzywda@gmail.com",
-      "phone": "07494546276",
-      "address": "Golders Green",
-      "website": "",
-      "aboute": "",
-      "dateOfBirth": "2020-02-14",
       "gender": "female",
       "id": 6
     },
@@ -93,129 +58,70 @@
       "address": "Golders Green",
       "website": "",
       "aboute": "",
-      "dateOfBirth": "2020-02-07",
+      "dateOfBirth": "2020-02-08",
       "gender": "female",
       "id": 7
     },
     {
-      "name": "",
-      "surname": "",
-      "email": "",
-      "phone": "",
-      "address": "",
+      "name": "Klaudia Krzywda",
+      "surname": "Krzywda",
+      "email": "klaudia.krzywda@gmail.com",
+      "phone": "07494546276",
+      "address": "Golders Green",
       "website": "",
       "aboute": "",
-      "dateOfBirth": "2020-02-07",
+      "dateOfBirth": "2020-02-14",
       "gender": "female",
       "id": 8
     },
     {
-      "name": "",
-      "surname": "",
-      "email": "",
-      "phone": "",
-      "address": "",
-      "website": "",
-      "aboute": "",
-      "dateOfBirth": "2020-02-09",
-      "gender": "female",
-      "id": 9
-    },
-    {
-      "name": "",
-      "surname": "",
-      "email": "",
-      "phone": "",
-      "address": "",
-      "website": "",
-      "aboute": "",
-      "dateOfBirth": "2020-02-08",
-      "gender": "female",
-      "id": 10
-    },
-    {
-      "name": "",
-      "surname": "",
-      "email": "",
-      "phone": "",
-      "address": "",
-      "website": "",
-      "aboute": "",
-      "dateOfBirth": "2020-02-08",
-      "gender": "female",
-      "id": 11
-    },
-    {
-      "name": "",
-      "surname": "",
-      "email": "",
-      "phone": "",
-      "address": "",
+      "name": "Klaudia Krzywda",
+      "surname": "Krzywda",
+      "email": "klaudia.krzywda@gmail.com",
+      "phone": "07494546276",
+      "address": "Golders Green",
       "website": "",
       "aboute": "",
       "dateOfBirth": "2020-02-07",
       "gender": "female",
-      "id": 12
+      "id": 9
     },
     {
-      "name": "",
-      "surname": "",
+      "name": "adasdsa",
+      "surname": "dsaddas",
       "email": "",
       "phone": "",
       "address": "",
       "website": "",
       "aboute": "",
-      "dateOfBirth": "2020-02-14",
+      "dateOfBirth": "",
       "gender": "female",
-      "id": 13
+      "id": 20
     },
     {
-      "name": "",
-      "surname": "",
-      "email": "",
+      "name": "Klaudia Krzywda",
+      "surname": "Krzywda",
+      "email": "klaudia.krzywda@gmail.com",
+      "phone": "07494546276",
+      "address": "Golders Green",
+      "website": "",
+      "aboute": "",
+      "dateOfBirth": "2020-02-06",
+      "gender": "female",
+      "id": 21
+    },
+    {
+      "name": "alex",
+      "surname": "Test",
+      "email": "adad@dfa.com",
       "phone": "",
       "address": "",
       "website": "",
-      "aboute": "",
-      "dateOfBirth": "2020-02-14",
+      "aboute": "somthin about me",
+      "dateOfBirth": "2020-02-12",
       "gender": "female",
-      "id": 14
-    },
-    {
-      "name": "",
-      "surname": "",
-      "email": "",
-      "phone": "",
-      "address": "",
-      "website": "",
-      "aboute": "",
-      "dateOfBirth": "2020-02-09",
-      "gender": "female",
-      "id": 15
-    },
-    {
-      "name": "",
-      "surname": "",
-      "email": "",
-      "phone": "",
-      "address": "",
-      "website": "",
-      "aboute": "",
-      "dateOfBirth": "2020-02-09",
-      "gender": "female",
-      "id": 16
-    },
-    {
-      "name": "",
-      "surname": "",
-      "email": "",
-      "phone": "",
-      "address": "",
-      "website": "",
-      "aboute": "",
-      "dateOfBirth": "2020-02-14",
-      "gender": "female",
-      "id": 17
+      "imageUrl": "http://res.cloudinary.com/kubaleski/image/upload/v1582929724/sbinmk1uohzxlhtv295c.png",
+      "id": 22
     }
   ]
 }

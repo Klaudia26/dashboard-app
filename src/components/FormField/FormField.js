@@ -13,10 +13,7 @@ const FormField = ({ field, handleChange }) => {
         id={field.name}
         className={styles.input}
       />
-      <label
-        htmlFor={field.name}
-        className={field.type === 'file' ? styles.labelMedia : styles.label}
-      >
+      <label htmlFor={field.name} className={styles.label}>
         {field.label}
       </label>
     </div>
