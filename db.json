@@ -32,84 +32,24 @@
     },
     {
       "name": "",
-      "createdAt": "2020-02-28T22:23:10.966Z",
-      "url": "http://res.cloudinary.com/kubaleski/image/upload/v1582928588/p4iiqviz08i0ivht2fua.png",
-      "id": 6
-    }
-  ],
-  "users": [
-    {
-      "name": "Emma",
-      "surname": "Smith",
-      "email": "klubs@gmail.com",
-      "phone": "34-22228-828",
-      "address": "Finschley Road 234",
-      "website": "www.strona.com",
-      "aboute": "Lorem ipsum",
-      "dateOfBirth": "12.02.1989",
-      "gender": "female",
-      "id": 6
-    },
-    {
-      "name": "Klaudia Krzywda",
-      "surname": "Krzywda",
-      "email": "klaudia.krzywda@gmail.com",
-      "phone": "07494546276",
-      "address": "Golders Green",
-      "website": "",
-      "aboute": "",
-      "dateOfBirth": "2020-02-08",
-      "gender": "female",
-      "id": 7
-    },
-    {
-      "name": "Klaudia Krzywda",
-      "surname": "Krzywda",
-      "email": "klaudia.krzywda@gmail.com",
-      "phone": "07494546276",
-      "address": "Golders Green",
-      "website": "",
-      "aboute": "",
-      "dateOfBirth": "2020-02-14",
-      "gender": "female",
+      "createdAt": "2020-02-29T19:01:12.650Z",
+      "url": "http://res.cloudinary.com/kubaleski/image/upload/v1583002869/u28oeeauvtxtidl945zd.png",
       "id": 8
     },
     {
-      "name": "Klaudia Krzywda",
-      "surname": "Krzywda",
-      "email": "klaudia.krzywda@gmail.com",
-      "phone": "07494546276",
-      "address": "Golders Green",
-      "website": "",
-      "aboute": "",
-      "dateOfBirth": "2020-02-07",
-      "gender": "female",
+      "name": "",
+      "createdAt": "2020-03-01T15:39:35.533Z",
+      "url": "http://res.cloudinary.com/kubaleski/image/upload/v1583077172/v9v9cndfavqur9c2eulr.png",
       "id": 9
     },
     {
-      "name": "adasdsa",
-      "surname": "dsaddas",
-      "email": "",
-      "phone": "",
-      "address": "",
-      "website": "",
-      "aboute": "",
-      "dateOfBirth": "",
-      "gender": "female",
-      "id": 20
-    },
-    {
-      "name": "Klaudia Krzywda",
-      "surname": "Krzywda",
-      "email": "klaudia.krzywda@gmail.com",
-      "phone": "07494546276",
-      "address": "Golders Green",
-      "website": "",
-      "aboute": "",
-      "dateOfBirth": "2020-02-06",
-      "gender": "female",
-      "id": 21
-    },
+      "name": "",
+      "createdAt": "2020-03-01T15:49:57.227Z",
+      "url": "http://res.cloudinary.com/kubaleski/image/upload/v1583077793/fiatwl7yffgimsk6zxzs.png",
+      "id": 10
+    }
+  ],
+  "users": [
     {
       "name": "alex",
       "surname": "Test",
@@ -122,6 +62,19 @@
       "gender": "female",
       "imageUrl": "http://res.cloudinary.com/kubaleski/image/upload/v1582929724/sbinmk1uohzxlhtv295c.png",
       "id": 22
+    },
+    {
+      "name": "Klaudia ",
+      "surname": "Krzywda",
+      "email": "kladia.kzywda@gmail.com",
+      "phone": "",
+      "address": "vhggh",
+      "website": "https://github.com/Klaudia26",
+      "aboute": "",
+      "dateOfBirth": "2020-03-21",
+      "gender": "female",
+      "imageUrl": "http://gravatar.com/avatar/fcadcabbfa076f41d39ece4b7941e6e9?d=identicon",
+      "id": 23
     }
   ]
 }

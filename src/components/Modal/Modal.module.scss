@@ -10,15 +10,37 @@
   align-items: center;
 }
 .modal {
-  background-color: grey;
+  background-color: #fff;
   width: 60rem;
-  padding: 3rem;
   border-radius: 3px;
+
+  .header {
+    background-color: #40d59d;
+    padding: 2rem;
+    color: #fff;
+    font-size: 2rem;
+  }
+  .content {
+    padding: 5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    input[type='file'] {
+      display: none;
+    }
+    .labelFile {
+      color: #fff;
+      background-color: #40d59d;
+      padding: 1rem 3rem;
+      cursor: pointer;
+    }
+  }
 }
 .action {
   display: flex;
-  justify-content: space-between;
-  padding-top: 2rem;
+  justify-content: space-around;
+  padding: 2rem 3rem;
   button {
     opacity: 0.9;
     color: grey;
@@ -28,14 +50,19 @@
     cursor: pointer;
     transition: all 0.2s;
     outline: none;
+    border: 1px solid lightgrey;
+    border-radius: 2px;
   }
   button:hover {
     background-color: #40d59d;
     border: none;
     color: white;
-    border-radius: 2px;
   }
 }
 .imagePreview {
-  width: 8rem;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  border: 1px solid black;
+  background-color: #fff;
 }

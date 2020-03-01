@@ -1,4 +1,8 @@
 .userCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   font-size: 1.7rem;
   padding: 1.3rem;
   border: 1px solid #40d59d;
@@ -8,8 +12,22 @@
     box-shadow: 0px 4px 15px 1px rgba(218, 218, 218, 1);
   }
 
+  &__image {
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    background-color: lightgrey;
+  }
+  &__list {
+    text-align: center;
+  }
+
   &__item {
     list-style: none;
+    font-size: 1.2rem;
+    p:nth-child(-n + 2) {
+      font-weight: 700;
+    }
   }
 }
 .selected {

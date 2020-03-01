@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './UserCard.module.scss';
 
 const UserCard = ({ user, activeUser, selectUser }) => {
-  console.log(user);
   return (
     <div
       className={`${styles.userCard} ${
@@ -10,6 +9,7 @@ const UserCard = ({ user, activeUser, selectUser }) => {
       }`}
       onClick={() => activeUser(user.id)}
     >
+      <img src={user.imageUrl} alt="user" className={styles.userCard__image} />
       <ul className={styles.userCard__list}>
         <li className={styles.userCard__item}>
           <p>{user.name}</p>
@@ -21,7 +21,6 @@ const UserCard = ({ user, activeUser, selectUser }) => {
           <p>{user.about}</p>
           <p>{user.dateOfBirth}</p>
           <p>{user.gender}</p>
-          <img src={user.imageUrl} alt="user" style={{ width: '4rem' }} />
         </li>
       </ul>
     </div>

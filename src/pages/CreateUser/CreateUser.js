@@ -4,6 +4,7 @@ import styles from './CreateUser.module.scss';
 import axios from 'axios';
 import FormField from '../../components/FormField/FormField';
 import ModalFile from '../../components/Modal/ModalFile';
+import md5 from 'md5';
 
 class CreateUser extends Component {
   state = {
@@ -58,7 +59,9 @@ class CreateUser extends Component {
       aboute: this.state.aboute,
       dateOfBirth: this.state.dateOfBirth,
       gender: this.state.gender,
-      imageUrl: this.state.imageUrl,
+      imageUrl: this.state.imageUrl
+        ? this.state.imageUrl
+        : `http://gravatar.com/avatar/${md5(this.state.email)}?d=identicon`,
     };
     const url = 'http://localhost:3001/users';
 
@@ -83,7 +86,6 @@ class CreateUser extends Component {
   };
 
   render() {
-    console.log(this.state);
     const fields = [
       { type: 'text', value: this.state.name, name: 'name', label: 'Name' },
       {
@@ -167,7 +169,11 @@ class CreateUser extends Component {
               <option value="maried">Maried</option>
             </select>
           </div>
-          <button onClick={this.openModal} className={styles.btnMedia}>
+          <button
+            type="button"
+            onClick={this.openModal}
+            className={styles.btnMedia}
+          >
             Choose file
           </button>
           <textarea
