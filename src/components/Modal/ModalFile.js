@@ -10,12 +10,18 @@ class ModalFile extends Component {
   };
   renderModalContent = () => (
     <>
-      <input type="file" onChange={this.handleFileChange} />
-      <img
-        className={styles.imagePreview}
-        src={this.state.mediaPreview}
-        alt="url"
-      />
+      <label for="file" className={styles.labelFile}>
+        {' '}
+        Choose file
+        <input type="file" onChange={this.handleFileChange} id="file" />
+      </label>
+      {this.state.mediaPreview && (
+        <img
+          className={styles.imagePreview}
+          src={this.state.mediaPreview}
+          alt="url"
+        />
+      )}
     </>
   );
 
